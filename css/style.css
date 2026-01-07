@@ -413,15 +413,31 @@ footer {
 
     .nav-right {
         gap: 15px;
+        margin-left: auto;
     }
 
     .logo {
         font-size: 1rem;
+         flex-shrink: 0;
     }
 
     .nav-icons svg {
         width: 18px;
         height: 18px;
+    }
+}
+@media (max-width: 640px) {
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-right: auto;
+        text-align: left;
+    }
+
+    .nav-right {
+        justify-content: flex-end;
     }
 }
 
