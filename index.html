@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharshan CS | Software Engineer (Backend)</title>
+    <script> (function () { 
+  const theme = localStorage.getItem('theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', theme);
+    })();
+</script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">~/dharshan</a>
+            
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Terminal</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                </ul>
+                
+                <div class="nav-icons">
+                    <a href="https://github.com/dharshancs" target="_blank" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    <a href="https://linkedin.com/in/dharshanspn" target="_blank" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    <button id="theme-toggle" aria-label="Toggle Theme">
+                        <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+                        <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="hero-section">
+        <div class="container split-layout">
+            
+            <!-- Static Terminal -->
+            <div class="terminal-wrapper">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="buttons">
+                            <span class="close"></span>
+                            <span class="minimize"></span>
+                            <span class="maximize"></span>
+                        </div>
+                        <div class="title">guest@dharshan: ~</div>
+                    </div>
+                    
+                    <div class="terminal-body" id="terminal-body">
+                        <!-- Static Content Pre-loaded -->
+                        <div class="output-line">
+                            <span class="prompt">guest@dharshan:~$</span> whoami
+                        </div>
+                        <div class="output-line">
+                            Software Engineer (Backend) focused on building systems.
+                        </div>
+                        <div class="output-line">
+                            Experience with async processing, caching, and data modeling.
+                        </div>
+                        <div class="output-line">
+                            Interested in scalable backend architecture and system design.
+                        </div>
+
+
+                        <br>
+                        
+                        <div class="output-line">Link Tree ↟ - Links to my work and profile.</div>
+                        <div class="output-line tree-item">
+                            <span class="tree-marker">├─</span> <a href="projects.html" class="term-link">Projects/Code</a> (GitHub)
+                        </div>
+                        <div class="output-line tree-item">
+                            <span class="tree-marker">├─</span> <a href="assets/resume.pdf" class="term-link">Resume</a> (PDF)
+                        </div>
+                        <div class="output-line tree-item">
+                            <span class="tree-marker">├─</span> <a href="https://linkedin.com/in/dharshanspn" target="_blank" class="term-link">LinkedIn</a>
+                        </div>
+                        <div class="output-line tree-item">
+                            <span class="tree-marker">└─</span> <a href="mailto:dharshanspn@gmail.com" class="term-link">Email</a> (Say Hi! 📨)
+                        </div>
+                        <br>
+                        
+                        <div class="output-line">Reach out at <span class="highlight">dharshanspn@gmail.com</span> for any queries.</div>
+                        <br>
+                        <!-- Space for future commands -->
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Intro Text -->
+            <div class="intro-text">
+                <h1>Building the <br> <span class="highlight">Backend of Tomorrow</span>.</h1>
+                <p class="subtitle">Specialized in Python, Flask, Redis & Distributed Task Queues.</p>
+                
+                <div class="tech-pills">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>PostgreSQL</span>
+                    <span>Redis</span>
+                    <span>Celery</span>
+                    <span>Linux</span>
+                    <span>Vue.js</span>
+                </div>
+
+                <div class="cta-group">
+                    <a href="projects.html" class="btn-primary">View Projects</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+    <!-- Education Section -->
+    <section class="education-section">
+        <div class="container">
+            <h2 class="section-title">/education</h2>
+            <div class="education-grid">
+                
+                <div class="edu-card">
+                    <div class="edu-year">2022 - 2026 (Expected)</div>
+                    <div class="edu-details">
+                        <h3>Mechanical Engineering</h3>
+                        <div class="edu-inst">Sant Longowal Institute of Engineering and Technology</div>
+                        <p class="edu-desc">Focusing on Engineering Mathematics and Computational Logic. Self-taught Software Engineering focus.</p>
+                    </div>
+                </div>
+            <div class="edu-card">
+                <div class="edu-year">2022 – Present</div>
+                <div class="edu-details">
+                    <h3>BS in Data Science and Applications </h3>
+                    <div class="edu-inst">Indian Institute of Technology Madras</div>
+                    <p class="edu-desc">
+                        Diploma in Programming completed.
+                        BS degree currently in progress.
+                    </p>
+                </div>
+            </div>
+
+                
+                <!-- Add more education cards here if needed -->
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
