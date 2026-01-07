@@ -44,22 +44,27 @@ ul { list-style: none; }
     height: 72px;
     position: fixed;
     top: 0;
+    left: 0; /* Ensure it sticks to the edge */
     width: 100%;
     display: flex;
-    align-items: center;
-
+    align-items: center; /* Vertically center content inside the bar */
     background: var(--bg-color);
     z-index: 100;
     border-bottom: 1px solid rgba(136, 146, 176, 0.1);
+    backdrop-filter: blur(10px); /* Optional: Adds a nice blur effect behind nav */
 }
 
 
 .nav-container {
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
     padding: 0 20px;
+    
+    /* THE FIX: distribute space between Logo and Right side */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
 }
 
 .logo {
@@ -67,11 +72,12 @@ ul { list-style: none; }
     color: var(--accent);
     font-weight: bold;
     font-size: 1.1rem;
-    flex-shrink: 0;
+    /* Remove flex-shrink to ensure logo never squashes */
+    flex-shrink: 0; 
 }
 
+/* Remove 'margin-left: auto' as justify-content handles the spacing now */
 .nav-right {
-    margin-left: auto; /* THIS is the only alignment rule you need */
     display: flex;
     align-items: center;
     gap: 20px;
@@ -413,21 +419,33 @@ footer {
 
 
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: none; /* Hide text links on mobile */
     }
 
+    /* On mobile, justify-content: space-between (defined above) 
+       will keep Logo on Left and Icons on Right.
+    */
+    
     .logo {
         font-size: 1rem;
     }
 
-    .nav-icons svg {
-        width: 18px;
-        height: 18px;
+    .nav-icons {
+        gap: 15px; /* Ensure space between github, linkedin, and theme toggle */
+    }
+    
+    /* Fix Hero Layout for Mobile */
+    .split-layout { 
+        flex-direction: column-reverse; 
+        gap: 30px; 
+    }
+    
+    .terminal-window {
+        margin-top: 20px;
     }
 }
-
 
 /* Responsive */
 @media (max-width: 768px) {
