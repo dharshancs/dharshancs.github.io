@@ -406,6 +406,16 @@ footer {
     align-items: center;
 }
 
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-spacer {
+    flex: 1;
+}
+
+
 @media (max-width: 640px) {
     .nav-links {
         display: none;
