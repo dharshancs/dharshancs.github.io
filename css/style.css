@@ -411,9 +411,6 @@ footer {
     align-items: center;
 }
 
-.nav-spacer {
-    flex: 1;
-}
 
 
 @media (max-width: 640px) {
