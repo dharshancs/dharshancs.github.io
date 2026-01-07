@@ -9,8 +9,4 @@ Features:
 - System Notes for key projects
 - Responsive layout
 
-## Deployment (GitHub Pages)
-1. Push contents to `<username>.github.io`
-2. Enable Pages (root / main)
-3. HTTPS enabled by default
 
