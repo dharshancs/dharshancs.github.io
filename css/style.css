@@ -400,7 +400,30 @@ footer {
     margin: 0 auto;
     padding: 120px 20px;
 }
+.navbar {
+    height: 72px;
+    display: flex;
+    align-items: center;
+}
 
+@media (max-width: 640px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-right {
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .nav-icons svg {
+        width: 18px;
+        height: 18px;
+    }
+}
 
 
 /* Responsive */
