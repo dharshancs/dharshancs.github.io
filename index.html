@@ -4,12 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dharshan CS | Software Engineer (Backend)</title>
-    <script> (function () { 
-  const theme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', theme);
-    })();
-</script>
-
+    <script>(function(){const t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -23,7 +18,6 @@
                     <li><a href="index.html" class="active">Terminal</a></li>
                     <li><a href="projects.html">Projects</a></li>
                 </ul>
-                
                 <div class="nav-icons">
                     <a href="https://github.com/dharshancs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
                     <a href="https://linkedin.com/in/dharshanspn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
@@ -38,8 +32,6 @@
 
     <main class="hero-section">
         <div class="container split-layout">
-            
-            <!-- Static Terminal -->
             <div class="terminal-wrapper">
                 <div class="terminal-window">
                     <div class="terminal-header">
@@ -50,77 +42,42 @@
                         </div>
                         <div class="title">guest@dharshan: ~</div>
                     </div>
-                    
                     <div class="terminal-body" id="terminal-body">
-                        <!-- Static Content Pre-loaded -->
-                        <div class="output-line">
-                            <span class="prompt">guest@dharshan:~$</span> whoami
-                        </div>
-                        <div class="output-line">
-                            Software Engineer (Backend) focused on building systems.
-                        </div>
-                        <div class="output-line">
-                            Experience with async processing, caching, and data modeling.
-                        </div>
-                        <div class="output-line">
-                            Interested in scalable backend architecture and system design.
-                        </div>
-
-
+                        <div class="output-line"><span class="prompt">guest@dharshan:~$</span> whoami</div>
+                        <div class="output-line">Software Engineer (Backend) focused on building systems.</div>
+                        <div class="output-line">Experience with async processing, caching, and data modeling.</div>
+                        <div class="output-line">Interested in scalable backend architecture and system design.</div>
                         <br>
-                        
                         <div class="output-line">Link Tree ↟ - Links to my work and profile.</div>
-                        <div class="output-line tree-item">
-                            <span class="tree-marker">├─</span> <a href="projects.html" class="term-link">Projects/Code</a> (GitHub)
-                        </div>
-                        <div class="output-line tree-item">
-                            <span class="tree-marker">├─</span> <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="term-link">Resume</a> (PDF)
-                        </div>
-                        <div class="output-line tree-item">
-                            <span class="tree-marker">├─</span> <a href="https://linkedin.com/in/dharshanspn" target="_blank"  rel="noopener noreferrer"  class="term-link">LinkedIn</a>
-                        </div>
-                        <div class="output-line tree-item">
-                            <span class="tree-marker">└─</span> <a href="mailto:dharshanspn@gmail.com" class="term-link">Email</a> (Say Hi! 📨)
-                        </div>
+                        <div class="output-line tree-item"><span class="tree-marker">├─</span> <a href="projects.html" class="term-link">Projects/Code</a> (GitHub)</div>
+                        <div class="output-line tree-item"><span class="tree-marker">├─</span> <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="term-link">Resume</a> (PDF)</div>
+                        <div class="output-line tree-item"><span class="tree-marker">├─</span> <a href="https://linkedin.com/in/dharshanspn" target="_blank" rel="noopener noreferrer" class="term-link">LinkedIn</a></div>
+                        <div class="output-line tree-item"><span class="tree-marker">└─</span> <a href="mailto:dharshanspn@gmail.com" class="term-link">Email</a> (Say Hi! 📨)</div>
                         <br>
-                        
                         <div class="output-line">Reach out at <span class="highlight">dharshanspn@gmail.com</span> for any queries.</div>
                         <br>
-                        <!-- Space for future commands -->
                     </div>
-                    
                 </div>
             </div>
 
-            <!-- Intro Text -->
             <div class="intro-text">
-                <h1>Building the <br> <span class="highlight">Backend of Tomorrow</span>.</h1>
+                <h1>Building the <br><span class="highlight">Backend of Tomorrow</span>.</h1>
                 <p class="subtitle">Specialized in Python, Flask, Redis & Distributed Task Queues.</p>
-                
                 <div class="tech-pills">
-                    <span>Python</span>
-                    <span>Flask</span>
-                    <span>PostgreSQL</span>
-                    <span>Redis</span>
-                    <span>Celery</span>
-                    <span>Linux</span>
-                    <span>Vue.js</span>
+                    <span>Python</span><span>Flask</span><span>PostgreSQL</span>
+                    <span>Redis</span><span>Celery</span><span>Linux</span><span>Vue.js</span>
                 </div>
-
                 <div class="cta-group">
                     <a href="projects.html" class="btn-primary">View Projects</a>
                 </div>
             </div>
-
         </div>
     </main>
-    
-    <!-- Education Section -->
+
     <section class="education-section">
         <div class="container">
             <h2 class="section-title">/education</h2>
             <div class="education-grid">
-                
                 <div class="edu-card">
                     <div class="edu-year">2022 - 2026 (Expected)</div>
                     <div class="edu-details">
@@ -129,22 +86,160 @@
                         <p class="edu-desc">Focusing on Engineering Mathematics and Computational Logic. Self-taught Software Engineering focus.</p>
                     </div>
                 </div>
-            <div class="edu-card">
-                <div class="edu-year">2023 – Present</div>
-                <div class="edu-details">
-                    <h3>BS in Data Science and Applications </h3>
-                    <div class="edu-inst">Indian Institute of Technology Madras</div>
-                    <p class="edu-desc">
-                        Diploma in Programming completed.
-                        BS degree currently in progress.
-                    </p>
+                <div class="edu-card">
+                    <div class="edu-year">2023 – Present</div>
+                    <div class="edu-details">
+                        <h3>BS in Data Science and Applications</h3>
+                        <div class="edu-inst">Indian Institute of Technology Madras</div>
+                        <p class="edu-desc">Diploma in Programming completed. BS degree currently in progress.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ORIGIN STORY SECTION -->
+    <section style="padding: 100px 0; border-top: 1px solid rgba(255,255,255,0.07); position: relative; overflow: hidden;">
+
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 20% 50%, rgba(0,255,136,0.03) 0%, transparent 60%); pointer-events: none;"></div>
+
+        <div class="container" style="position: relative;">
+
+            <div style="margin-bottom: 64px;">
+                <div style="font-family: 'Fira Code', monospace; font-size: 0.75rem; color: #00ff88; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px; opacity: 0.8;">/origin_story</div>
+                <h2 style="font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; margin: 0 0 20px; color: var(--text, #f0f0f0);">
+                    I saw a broken process.<br>
+                    <span style="color: #00ff88;">So I automated it.</span><br>
+                    Then I scaled it to 150 accounts.
+                </h2>
+                <p style="font-family: 'Fira Code', monospace; font-size: 0.9rem; color: var(--text-muted, #888); max-width: 560px; line-height: 1.7;">
+                    This is the story of a system built through five iterations — each one breaking at a new scale ceiling, each one forcing a smarter architecture.
+                </p>
+            </div>
+
+            <!-- VERSION CARDS -->
+            <div style="display: grid; gap: 2px;">
+
+                <!-- V1 -->
+                <div style="display: grid; grid-template-columns: 140px 1fr; gap: 0; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px 12px 0 0; overflow: hidden; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(0,255,136,0.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'">
+                    <div style="background: rgba(0,255,136,0.06); padding: 28px 24px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid rgba(255,255,255,0.07);">
+                        <div style="font-family: 'Fira Code', monospace; font-size: 1.5rem; font-weight: 600; color: #00ff88;">v1</div>
+                        <div style="font-family: 'Fira Code', monospace; font-size: 0.65rem; color: rgba(0,255,136,0.5); margin-top: 4px; text-align: center;">the spark</div>
+                    </div>
+                    <div style="padding: 28px 32px; background: rgba(255,255,255,0.02);">
+                        <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 10px; font-family: 'Fira Code', monospace;">Selenium + Telegram API</div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted, #999); line-height: 1.75; margin: 0 0 16px;">Spotted a process that required manual intervention every 10-15 seconds. Built a scraper that automated the loop and pushed Telegram alerts the moment an event triggered. First version. It worked.</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.2); border-radius: 4px; color: rgba(0,255,136,0.7);">Selenium</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">Telegram API</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- V2 -->
+                <div style="display: grid; grid-template-columns: 140px 1fr; gap: 0; border: 1px solid rgba(255,255,255,0.07); border-top: none; overflow: hidden; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(0,255,136,0.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'">
+                    <div style="background: rgba(0,255,136,0.04); padding: 28px 24px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid rgba(255,255,255,0.07);">
+                        <div style="font-family: 'Fira Code', monospace; font-size: 1.5rem; font-weight: 600; color: #00e07a;">v2</div>
+                        <div style="font-family: 'Fira Code', monospace; font-size: 0.65rem; color: rgba(0,255,136,0.4); margin-top: 4px; text-align: center;">demand</div>
+                    </div>
+                    <div style="padding: 28px 32px; background: rgba(255,255,255,0.015);">
+                        <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 10px; font-family: 'Fira Code', monospace;">Multi-user on Separate VMs</div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted, #999); line-height: 1.75; margin: 0 0 16px;">Others wanted access. Deployed the same unmodified script on individual AWS EC2 instances — one VM per user. Horizontal scaling by duplication. It worked but cost per user was high.</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.2); border-radius: 4px; color: rgba(0,255,136,0.7);">AWS EC2</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">Multi-VM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- V3 -->
+                <div style="display: grid; grid-template-columns: 140px 1fr; gap: 0; border: 1px solid rgba(255,255,255,0.07); border-top: none; overflow: hidden; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(0,255,136,0.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'">
+                    <div style="background: rgba(255,170,0,0.04); padding: 28px 24px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid rgba(255,255,255,0.07);">
+                        <div style="font-family: 'Fira Code', monospace; font-size: 1.5rem; font-weight: 600; color: #ffaa00;">v3</div>
+                        <div style="font-family: 'Fira Code', monospace; font-size: 0.65rem; color: rgba(255,170,0,0.5); margin-top: 4px; text-align: center;">first wall</div>
+                    </div>
+                    <div style="padding: 28px 32px; background: rgba(255,255,255,0.01);">
+                        <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 10px; font-family: 'Fira Code', monospace;">Single Instance, Parallel Processes</div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted, #999); line-height: 1.75; margin: 0 0 16px;">Consolidated to one EC2 instance, running one process per user in parallel. Cost dropped significantly. Stable at 5-6 users. At 10-15 accounts, memory pressure from Selenium's per-browser overhead started crashing the system.</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,170,0,0.25); border-radius: 4px; color: rgba(255,170,0,0.7);">Multiprocessing</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">Single EC2</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,50,50,0.2); border-radius: 4px; color: rgba(255,80,80,0.6);">⚠ OOM at 15 accounts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- V4 -->
+                <div style="display: grid; grid-template-columns: 140px 1fr; gap: 0; border: 1px solid rgba(255,255,255,0.07); border-top: none; overflow: hidden; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(0,255,136,0.25)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'">
+                    <div style="background: rgba(255,100,0,0.04); padding: 28px 24px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid rgba(255,255,255,0.07);">
+                        <div style="font-family: 'Fira Code', monospace; font-size: 1.5rem; font-weight: 600; color: #ff6400;">v4</div>
+                        <div style="font-family: 'Fira Code', monospace; font-size: 0.65rem; color: rgba(255,100,0,0.5); margin-top: 4px; text-align: center;">second wall</div>
+                    </div>
+                    <div style="padding: 28px 32px; background: rgba(255,255,255,0.01);">
+                        <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 10px; font-family: 'Fira Code', monospace;">Pyppeteer Migration</div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted, #999); line-height: 1.75; margin: 0 0 16px;">Replaced Selenium with Pyppeteer — headless Chromium with a smaller footprint. Extended the ceiling to ~20 accounts. But the core architecture still required one live browser context per account. Same fundamental constraint, slightly higher limit.</p>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,100,0,0.25); border-radius: 4px; color: rgba(255,100,0,0.7);">Pyppeteer</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">Headless Chromium</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,50,50,0.2); border-radius: 4px; color: rgba(255,80,80,0.6);">⚠ fails at 20+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- V5 - THE SOLVE -->
+                <div style="display: grid; grid-template-columns: 140px 1fr; gap: 0; border: 2px solid rgba(0,255,136,0.35); border-top: none; border-radius: 0 0 12px 12px; overflow: hidden; position: relative; transition: border-color 0.2s;" onmouseover="this.style.borderColor='rgba(0,255,136,0.6)'" onmouseout="this.style.borderColor='rgba(0,255,136,0.35)'">
+                    <div style="position: absolute; top: 0; right: 0; background: rgba(0,255,136,0.12); font-family: 'Fira Code', monospace; font-size: 0.65rem; color: #00ff88; padding: 4px 12px; border-bottom-left-radius: 8px; letter-spacing: 0.1em;">FINAL ARCHITECTURE</div>
+                    <div style="background: rgba(0,255,136,0.08); padding: 28px 24px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 2px solid rgba(0,255,136,0.2);">
+                        <div style="font-family: 'Fira Code', monospace; font-size: 1.5rem; font-weight: 600; color: #00ff88;">v5</div>
+                        <div style="font-family: 'Fira Code', monospace; font-size: 0.65rem; color: rgba(0,255,136,0.6); margin-top: 4px; text-align: center;">the solve</div>
+                    </div>
+                    <div style="padding: 32px 32px; background: rgba(0,255,136,0.02);">
+                        <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 12px; font-family: 'Fira Code', monospace;">Cookie Rotation Architecture</div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted, #bbb); line-height: 1.75; margin: 0 0 16px;">The key insight: the 10-15 second wait between refreshes is dead time. A browser instance sitting idle burns memory for nothing. Eliminated the need for persistent browser contexts entirely.</p>
+                        <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(0,255,136,0.15); border-radius: 8px; padding: 16px 20px; margin-bottom: 16px; font-family: 'Fira Code', monospace; font-size: 0.8rem; line-height: 1.9; color: rgba(255,255,255,0.65);">
+                            <span style="color: #00ff88;">01</span> — each account logs in once, saves session cookie to disk<br>
+                            <span style="color: #00ff88;">02</span> — single loop: load cookie → check → alert if hit → drop cookie → next account<br>
+                            <span style="color: #00ff88;">03</span> — idle wait time reused as switch time across all 150 accounts<br>
+                            <span style="color: #00ff88;">04</span> — cookie validation failure triggers auto re-login and cookie refresh
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px; padding: 12px 16px; background: rgba(0,255,136,0.06); border-radius: 8px; border: 1px solid rgba(0,255,136,0.15);">
+                            <div style="font-family: 'Fira Code', monospace; font-size: 1.6rem; font-weight: 700; color: #00ff88;">150</div>
+                            <div style="font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.5;">accounts handled in<br><strong style="color: rgba(255,255,255,0.8);">a single instance</strong> with zero memory blowup</div>
+                        </div>
+                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.3); border-radius: 4px; color: rgba(0,255,136,0.8);">Cookie Pooling</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.3); border-radius: 4px; color: rgba(0,255,136,0.8);">Session Management</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.3); border-radius: 4px; color: rgba(0,255,136,0.8);">Auto-recovery</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">AWS</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- BOTTOM CALLOUT -->
+            <div style="margin-top: 48px; padding: 32px; border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; background: rgba(255,255,255,0.02); display: flex; gap: 32px; align-items: flex-start; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                    <div style="font-family: 'Fira Code', monospace; font-size: 0.7rem; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; margin-bottom: 8px;">WHAT THIS TAUGHT ME</div>
+                    <p style="font-size: 0.88rem; color: var(--text-muted, #999); line-height: 1.8; margin: 0;">Every version broke at a new ceiling. Every break forced a better mental model. By v5 I wasn't just fixing bugs — I was rethinking the concurrency model from scratch. That's what real scaling looks like.</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px; min-width: 180px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="font-family: 'Fira Code', monospace; font-size: 1.4rem; font-weight: 700; color: #00ff88; min-width: 48px;">5x</div>
+                        <div style="font-size: 0.78rem; color: rgba(255,255,255,0.4);">architecture iterations</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="font-family: 'Fira Code', monospace; font-size: 1.4rem; font-weight: 700; color: #00ff88; min-width: 48px;">150</div>
+                        <div style="font-size: 0.78rem; color: rgba(255,255,255,0.4);">concurrent accounts, 1 instance</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="font-family: 'Fira Code', monospace; font-size: 1.4rem; font-weight: 700; color: #00ff88; min-width: 48px;">0</div>
+                        <div style="font-size: 0.78rem; color: rgba(255,255,255,0.4);">memory blowups post-v5</div>
+                    </div>
                 </div>
             </div>
 
-                
-                <!-- Add more education cards here if needed -->
-                
-            </div>
         </div>
     </section>
 
