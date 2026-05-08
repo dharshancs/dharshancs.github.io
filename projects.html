@@ -4,13 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Dharshan CS</title>
-    <script>
-(function () {
-  const theme = localStorage.getItem('theme') || 'dark';
-  document.documentElement.setAttribute('data-theme', theme);
-})();
-</script>
-
+    <script>(function(){const t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -24,11 +18,10 @@
                     <li><a href="index.html">Terminal</a></li>
                     <li><a href="projects.html" class="active">Projects</a></li>
                 </ul>
-                
                 <div class="nav-icons">
-                    <a href="https://github.com/dharshancs" target="_blank" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                    <a href="https://linkedin.com/in/dharshanspn" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-                    <button id="theme-toggle">
+                    <a href="https://github.com/dharshancs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    <a href="https://linkedin.com/in/dharshanspn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    <button id="theme-toggle" aria-label="Toggle Theme">
                         <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
                         <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
                     </button>
@@ -37,15 +30,68 @@
         </div>
     </nav>
 
-<main class="projects-container">
+    <main class="projects-container">
 
         <div class="section-header">
             <h2>/projects</h2>
-            <p>System Design & Implementation details.</p>
+            <p>Real systems. Real constraints. Real iterations.</p>
         </div>
 
+        <!-- FEATURED: Chegg Automation System - full width -->
+        <article class="project-card featured" style="margin-bottom: 25px; border-left: 4px solid var(--accent); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 16px; right: 16px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent); background: var(--highlight); padding: 3px 10px; border-radius: 4px; letter-spacing: 0.1em;">ORIGIN PROJECT</div>
+            <div class="card-top">
+                <div class="folder-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </div>
+                <div class="links">
+                    <a href="notes/chegg-bot.html" class="term-link" style="font-family: var(--font-mono); font-size: 0.8rem;">System Notes →</a>
+                </div>
+            </div>
+            <h3>Chegg Automation System</h3>
+            <div class="tech-stack-list">
+                <span>Python</span><span>Selenium</span><span>Pyppeteer</span><span>AWS EC2</span><span>Telegram API</span>
+            </div>
+            <p class="description" style="margin-bottom: 20px;">
+                Spotted a process requiring manual intervention every 10-15 seconds. Built an automation system and iterated through 4 architectural versions as it kept breaking at new scale ceilings — ending at a cookie rotation model that handled 150 concurrent accounts on a single EC2 instance with zero memory blowup.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px;">
+                <div style="background: var(--highlight); border-radius: 6px; padding: 12px; text-align: center;">
+                    <div style="font-family: var(--font-mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">5x</div>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px;">architecture iterations</div>
+                </div>
+                <div style="background: var(--highlight); border-radius: 6px; padding: 12px; text-align: center;">
+                    <div style="font-family: var(--font-mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">150</div>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px;">accounts, 1 instance</div>
+                </div>
+                <div style="background: var(--highlight); border-radius: 6px; padding: 12px; text-align: center;">
+                    <div style="font-family: var(--font-mono); font-size: 1.4rem; font-weight: 700; color: var(--accent);">24/7</div>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px;">uninterrupted operation</div>
+                </div>
+            </div>
+        </article>
+
         <div class="grid">
-            
+
+            <!-- Text-to-Learn -->
+            <article class="project-card featured">
+                <div class="card-top">
+                    <div class="folder-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div class="links" style="display:flex; gap: 10px; align-items: center;">
+                        <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent); background: var(--highlight); padding: 2px 8px; border-radius: 4px;">AI</span>
+                    </div>
+                </div>
+                <h3>Text-to-Learn</h3>
+                <div class="tech-stack-list">
+                    <span>React</span><span>Node.js</span><span>MongoDB</span><span>Gemini API</span>
+                </div>
+                <p class="description">
+                    Full-stack AI course generator. User inputs a topic, system outputs structured modules, lessons, MCQs, and code blocks via a multi-stage Gemini API prompt pipeline. Hierarchical MongoDB schema (Course → Module → Lesson) with Auth0 OAuth2 authentication.
+                </p>
+            </article>
+
             <!-- ParkSpace v2 -->
             <article class="project-card featured">
                 <div class="card-top">
@@ -53,16 +99,16 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                     </div>
                     <div class="links">
-                        <a href="https://github.com/dharshancs/parking-lot-booking-system-v2" target="_blank"  rel="noopener noreferrer" aria-label="GitHub Repo"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                        <a href="https://github.com/dharshancs/parking-lot-booking-system-v2" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repo"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
                     </div>
                 </div>
                 <h3>ParkSpace v2</h3>
                 <div class="tech-stack-list">
                     <span>Flask</span><span>Redis</span><span>Celery</span><span>Vue.js</span>
                 </div>
-                <a href="notes/parkspace-v2.html" class="term-link">System Notes</a>
+                <a href="notes/parkspace-v2.html" class="term-link" style="display: inline-block; margin-bottom: 14px; font-size: 0.82rem;">System Notes →</a>
                 <p class="description">
-                    A scalable parking management system. Migrated from monolithic v1 to a distributed architecture using Celery for async tasks (email reports) and Redis for caching.
+                    RBAC-enforced parking platform sustaining 300-500 concurrent users under load. Sub-200ms response times via Redis caching. Celery + Redis for async task processing. Normalized 6-table PostgreSQL schema with dynamic pricing.
                 </p>
             </article>
 
@@ -73,35 +119,16 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                     </div>
                     <div class="links">
-                        <a href="https://github.com/dharshancs/event-management-dashboard-interview" target="_blank"  rel="noopener noreferrer" aria-label="GitHub Repo"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                        <a href="https://github.com/dharshancs/event-management-dashboard-interview" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repo"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
                     </div>
                 </div>
                 <h3>Event Dashboard</h3>
                 <div class="tech-stack-list">
-                    <span>Flask</span><span>SQLite</span><span>Polling</span>
+                    <span>Flask</span><span>SQLite</span><span>JS Polling</span>
                 </div>
-                <a href="notes/event-dashboard.html" class="term-link">System Notes</a>
+                <a href="notes/event-dashboard.html" class="term-link" style="display: inline-block; margin-bottom: 14px; font-size: 0.82rem;">System Notes →</a>
                 <p class="description">
-                    Role-based event manager built for an interview challenge. Features real-time attendee tracking via JS polling and automated date-based notifications.
-                </p>
-            </article>
-
-            <!-- ParkSpace v1 -->
-            <article class="project-card">
-                <div class="card-top">
-                    <div class="folder-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-                    </div>
-                    <div class="links">
-                        <a href="https://github.com/dharshancs/parking-lot-booking-system" target="_blank"  rel="noopener noreferrer" aria-label="GitHub Repo"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
-                    </div>
-                </div>
-                <h3>Parking System v1</h3>
-                <div class="tech-stack-list">
-                    <span>Flask</span><span>Jinja2</span><span>MVC</span>
-                </div>
-                <p class="description">
-                    The foundational monolith. Focuses on core relational data modeling, atomic transactions, and admin workflows.
+                    Role-based event manager built for an interview challenge. Real-time attendee tracking via JS polling. Automated date-based notifications across 3 channels. Structured across 8 Flask Blueprints.
                 </p>
             </article>
 
