@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chegg Bot | System Notes | Dharshan CS</title>
+    <script>(function(){const t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">~/dharshan</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Terminal</a></li>
+                    <li><a href="../projects.html" class="active">Projects</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="https://github.com/dharshancs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    <a href="https://linkedin.com/in/dharshanspn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    <button id="theme-toggle" aria-label="Toggle Theme">
+                        <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+                        <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="notes-container">
+        <article class="notes-sheet">
+            <h2>/system-notes/chegg-automation</h2>
+
+            <p><strong>Context:</strong> Spotted a workflow requiring manual page refresh every 10-15 seconds to catch incoming questions before other users. Built an automation system. It broke five times at new scale ceilings. Each break forced a better architecture.</p>
+
+            <h3>The Problem</h3>
+            <ul>
+                <li>Manual refresh loop — 10-15 seconds, eyes on screen, no breaks</li>
+                <li>First to refresh after a question posted wins the assignment</li>
+                <li>Not automatable with a simple timer — needed real browser session</li>
+            </ul>
+
+            <h3>v1 — Selenium + Telegram</h3>
+            <ul>
+                <li>Selenium handles login and page refresh loop</li>
+                <li>Telegram API fires notification the moment a question is detected</li>
+                <li>No more screen monitoring. Worked for a single user.</li>
+            </ul>
+
+            <h3>v2 — Multi-user: Separate VMs</h3>
+            <ul>
+                <li>Demand grew. Others wanted access.</li>
+                <li>Deployed same unmodified script on individual AWS EC2 instances</li>
+                <li>One VM per user — worked, but per-user cloud cost was unsustainable</li>
+            </ul>
+
+            <h3>v3 — Single Instance, Parallel Processes</h3>
+            <ul>
+                <li>Consolidated to one EC2. One file per user running as parallel processes.</li>
+                <li>Stable at 5-6 users. At 10-15 accounts, Selenium's per-browser memory overhead caused OOM crashes.</li>
+            </ul>
+
+            <h3>v4 — Pyppeteer Migration</h3>
+            <ul>
+                <li>Replaced Selenium with Pyppeteer — headless Chromium, lighter footprint</li>
+                <li>Ceiling moved from ~15 to ~20 accounts</li>
+                <li>Root problem unchanged: one live browser context per account, always idle during wait period</li>
+            </ul>
+
+            <h3>v5 — Cookie Rotation Architecture</h3>
+            <ul>
+                <li><strong>Key insight:</strong> the 10-15 second wait between refreshes is dead time — a browser context sitting idle burns memory for nothing</li>
+                <li>On startup: each account logs in once, session cookie saved to disk</li>
+                <li>Single event loop: load cookie → check for question → alert if found → drop cookie → load next account's cookie</li>
+                <li>Idle wait time reused as account-switching time across all 150 accounts</li>
+                <li>Cookie validation failure triggers auto re-login, fresh cookie saved, loop continues</li>
+                <li>No persistent browser contexts. No memory blowup.</li>
+            </ul>
+
+            <h3>Result</h3>
+            <ul>
+                <li>150 concurrent accounts on a single EC2 instance</li>
+                <li>24/7 uninterrupted operation with automatic session recovery</li>
+                <li>Zero human intervention required post-deployment</li>
+            </ul>
+
+            <h3>What This Taught Me</h3>
+            <ul>
+                <li>Stateless session management scales; stateful browser contexts do not</li>
+                <li>Idle time in one context is productive time in another — concurrency through time-slicing</li>
+                <li>Real scaling problems reveal themselves only under real load — design for the ceiling you haven't hit yet</li>
+            </ul>
+
+            <br>
+            <a href="../projects.html" class="term-link">← Back to Projects</a>
+        </article>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
