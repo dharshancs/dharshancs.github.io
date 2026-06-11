@@ -37,23 +37,24 @@
             <p>Real systems. Real constraints. Real iterations.</p>
         </div>
 
-        <!-- FEATURED: Chegg Automation System - full width -->
+        <!-- FEATURED: ExpertDesk Monitor - full width -->
         <article class="project-card featured" style="margin-bottom: 25px; border-left: 4px solid var(--accent); position: relative; overflow: hidden;">
             <div style="position: absolute; top: 16px; right: 16px; font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent); background: var(--highlight); padding: 3px 10px; border-radius: 4px; letter-spacing: 0.1em;">ORIGIN PROJECT</div>
             <div class="card-top">
                 <div class="folder-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                 </div>
-                <div class="links">
-                    <a href="notes/chegg-bot.html" class="term-link" style="font-family: var(--font-mono); font-size: 0.8rem;">System Notes →</a>
+                <div class="links" style="display: flex; gap: 12px; align-items: center;">
+                    <a href="notes/expertdesk-bot.html" class="term-link" style="font-family: var(--font-mono); font-size: 0.8rem;">System Notes →</a>
+                    <a href="https://github.com/dharshancs/expertdesk-monitor" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repo"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
                 </div>
             </div>
-            <h3>Chegg Automation System</h3>
+            <h3>ExpertDesk Monitor</h3>
             <div class="tech-stack-list">
-                <span>Python</span><span>Selenium</span><span>Pyppeteer</span><span>AWS EC2</span><span>Telegram API</span>
+                <span>Python</span><span>Selenium</span><span>Pyppeteer</span><span>Playwright</span><span>asyncio</span><span>Telegram API</span>
             </div>
             <p class="description" style="margin-bottom: 20px;">
-                Spotted a process requiring manual intervention every 10-15 seconds. Built an automation system and iterated through 4 architectural versions as it kept breaking at new scale ceilings — ending at a cookie rotation model that handled 150 concurrent accounts on a single EC2 instance with zero memory blowup.
+                Spotted a process requiring manual intervention every 10-15 seconds on an expert Q&A platform. Built an automation bot, iterated through 5 architectural versions as it kept breaking at new scale ceilings — ending at a cookie rotation model that handled 150 concurrent accounts on a single server with flat memory usage. Ran as a paid service before open sourcing.
             </p>
             <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 8px;">
                 <div style="background: var(--highlight); border-radius: 6px; padding: 12px; text-align: center;">
