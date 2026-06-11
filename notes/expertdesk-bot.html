@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExpertDesk Monitor | System Notes | Dharshan CS</title>
+    <script>(function(){const t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">~/dharshan</a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Terminal</a></li>
+                    <li><a href="../projects.html" class="active">Projects</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="https://github.com/dharshancs" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a>
+                    <a href="https://linkedin.com/in/dharshanspn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    <button id="theme-toggle" aria-label="Toggle Theme">
+                        <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></span>
+                        <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="notes-container">
+        <article class="notes-sheet">
+            <h2>/system-notes/expertdesk-monitor</h2>
+
+            <p><strong>Context:</strong> Spotted a workflow on an expert Q&A platform (name not disclosed per usage agreement) that required manual page refresh every 10-15 seconds to catch incoming questions before other users. Built an automation system. It broke five times at new scale ceilings. Each break forced a better architecture. Ran this as a paid service before open sourcing.</p>
+
+            <h3>The Problem</h3>
+            <ul>
+                <li>Manual refresh loop — 10-15 seconds, eyes on screen, no breaks</li>
+                <li>First to refresh after a question posts wins the assignment</li>
+                <li>Not solvable with a simple timer — needed a real authenticated browser session</li>
+            </ul>
+
+            <h3>v1 — Selenium + Telegram</h3>
+            <ul>
+                <li>Selenium handles login and page refresh loop in a headless Chrome window</li>
+                <li>Telegram Bot API fires a notification the moment the question button is detected</li>
+                <li>No more screen monitoring. Worked for a single account.</li>
+            </ul>
+
+            <h3>v2 — Multiprocessing: One Process Per Account</h3>
+            <ul>
+                <li>Demand grew. Multiple accounts needed to run simultaneously.</li>
+                <li>Used Python multiprocessing — each OS process gets its own Chrome instance and its own cookies</li>
+                <li>Stable at 5-6 accounts. At 10-15, Chrome's per-process memory overhead (~200MB each) caused OOM crashes.</li>
+            </ul>
+
+            <h3>v3 — Pyppeteer: Shared Browser, Isolated Contexts</h3>
+            <ul>
+                <li>Replaced Selenium + multiprocessing with Pyppeteer + asyncio</li>
+                <li>One Chrome process hosting multiple isolated incognito contexts — one per account</li>
+                <li>Contexts share one Chrome process but have completely separate cookies and sessions</li>
+                <li>Memory ceiling extended. But Pyppeteer leaked memory over hours — needed process restarts every few hours.</li>
+            </ul>
+
+            <h3>v4 — Playwright + OTP Handling</h3>
+            <ul>
+                <li>Replaced Pyppeteer with Playwright — actively maintained, no memory leak</li>
+                <li>Platform started enforcing two-factor authentication on some accounts</li>
+                <li>Bot now detects the OTP screen, sends a Telegram message to the account owner asking for the code, polls for their reply, cleans the text, and types it character-by-character (required because React's field validators need individual keystroke events)</li>
+                <li>Persistent contexts still accumulate memory over long runtimes — architectural problem, not a library problem</li>
+            </ul>
+
+            <h3>v5 — Cookie Rotation Architecture</h3>
+            <ul>
+                <li><strong>Key insight:</strong> the 20-second wait between page reloads is dead time — a browser context sitting idle during that window burns ~100MB doing nothing</li>
+                <li>After login, session cookies and storage state saved to disk per account. Context closed immediately.</li>
+                <li>To check for a question: load cookies from disk → open fresh context → navigate → check → close context</li>
+                <li>Contexts live for a fixed cycle duration (1 hour), then destroyed and recreated from refreshed cookies</li>
+                <li>Dead cookie detection: if saved session redirects to login, auto re-login runs and fresh cookies are written to disk. No human intervention.</li>
+                <li>During the cooldown gap between cycles, no context exists for that account — zero memory held.</li>
+            </ul>
+
+            <h3>Result</h3>
+            <ul>
+                <li>150 concurrent accounts on a single server instance</li>
+                <li>Memory stays flat regardless of runtime — no more restarts</li>
+                <li>24/7 uninterrupted operation with automatic session recovery</li>
+                <li>Ran as a paid service before open sourcing the full codebase</li>
+            </ul>
+
+            <h3>What This Taught Me</h3>
+            <ul>
+                <li>Idle time in one context is wasted memory — short-lived contexts scale; persistent ones don't</li>
+                <li>Real scaling problems only appear under real load — every version felt fine until it didn't</li>
+                <li>Library choice matters for long-running processes — a memory leak that's invisible in testing becomes critical in production</li>
+                <li>OTP handling at scale forced understanding of how JS field validators work at the keystroke level</li>
+            </ul>
+
+            <br>
+            <a href="../projects.html" class="term-link">← Back to Projects</a>
+        </article>
+    </main>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
