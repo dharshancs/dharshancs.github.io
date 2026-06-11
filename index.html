@@ -48,15 +48,7 @@
                         <div class="output-line">Experience with async processing, caching, and data modeling.</div>
                         <div class="output-line">Built a browser automation system scaled to 150 accounts via cookie rotation.</div>
                         <div class="output-line">Engineered a production Flask backend handling 500 concurrent users.</div>
-
                         <div class="output-line">Interested in scalable backend architecture and system design.</div>
-
-
-
-
-
-
-                        
 
                         <br>
                         <div class="output-line">Link Tree ↟ - Links to my work and profile.</div>
@@ -145,7 +137,7 @@
                     </div>
                     <div style="padding: 28px 32px; background: rgba(255,255,255,0.02);">
                         <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 10px; font-family: 'Fira Code', monospace;">Selenium + Telegram API</div>
-                        <p style="font-size: 0.9rem; color: var(--text-muted, #999); line-height: 1.75; margin: 0 0 16px;">Spotted a process that required manual intervention every 10-15 seconds. Built a scraper that automated the loop and pushed Telegram alerts the moment an event triggered. First version. It worked.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted, #999); line-height: 1.75; margin: 0 0 16px;">Spotted a process that required manual intervention every 10-15 seconds. Built a scraper that automated the loop and pushed Telegram alerts the moment a question was detected. Single account. It worked.</p>
                         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
                             <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.2); border-radius: 4px; color: rgba(0,255,136,0.7);">Selenium</span>
                             <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">Telegram API</span>
@@ -161,11 +153,11 @@
                         <div style="font-family: 'Fira Code', monospace; font-size: 0.65rem; color: rgba(0,255,136,0.4); margin-top: 4px; text-align: center;">demand</div>
                     </div>
                     <div style="padding: 28px 32px; background: rgba(255,255,255,0.015);">
-                        <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 10px; font-family: 'Fira Code', monospace;">Multi-user on Separate VMs</div>
-                        <p style="font-size: 0.9rem; color: var(--text-muted, #999); line-height: 1.75; margin: 0 0 16px;">Others wanted access. Deployed the same unmodified script on individual AWS EC2 instances — one VM per user. Horizontal scaling by duplication. It worked but cost per user was high.</p>
+                        <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 10px; font-family: 'Fira Code', monospace;">Multiprocessing: One Process Per Account</div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted, #999); line-height: 1.75; margin: 0 0 16px;">Multiple accounts needed to run simultaneously. Used Python multiprocessing — each OS process gets its own Chrome instance with completely isolated cookies and sessions. Stable at 5-6 accounts. At 10-15, Chrome's per-process memory overhead (~200MB each) caused OOM crashes.</p>
                         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.2); border-radius: 4px; color: rgba(0,255,136,0.7);">AWS EC2</span>
-                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">Multi-VM</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.2); border-radius: 4px; color: rgba(0,255,136,0.7);">Multiprocessing</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,50,50,0.2); border-radius: 4px; color: rgba(255,80,80,0.6);">⚠ OOM at 15 accounts</span>
                         </div>
                     </div>
                 </div>
@@ -177,12 +169,12 @@
                         <div style="font-family: 'Fira Code', monospace; font-size: 0.65rem; color: rgba(255,170,0,0.5); margin-top: 4px; text-align: center;">first wall</div>
                     </div>
                     <div style="padding: 28px 32px; background: rgba(255,255,255,0.01);">
-                        <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 10px; font-family: 'Fira Code', monospace;">Single Instance, Parallel Processes</div>
-                        <p style="font-size: 0.9rem; color: var(--text-muted, #999); line-height: 1.75; margin: 0 0 16px;">Consolidated to one EC2 instance, running one process per user in parallel. Cost dropped significantly. Stable at 5-6 users. At 10-15 accounts, memory pressure from Selenium's per-browser overhead started crashing the system.</p>
+                        <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 10px; font-family: 'Fira Code', monospace;">Pyppeteer: Shared Browser, Isolated Contexts</div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted, #999); line-height: 1.75; margin: 0 0 16px;">Replaced Selenium with Pyppeteer and asyncio. One Chrome process hosting multiple isolated incognito contexts — separate cookies per account, shared Chrome overhead. Memory ceiling extended significantly. But Pyppeteer leaked memory over hours, requiring process restarts.</p>
                         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,170,0,0.25); border-radius: 4px; color: rgba(255,170,0,0.7);">Multiprocessing</span>
-                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">Single EC2</span>
-                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,50,50,0.2); border-radius: 4px; color: rgba(255,80,80,0.6);">⚠ OOM at 15 accounts</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,170,0,0.25); border-radius: 4px; color: rgba(255,170,0,0.7);">Pyppeteer</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">asyncio</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,50,50,0.2); border-radius: 4px; color: rgba(255,80,80,0.6);">⚠ memory leak over hours</span>
                         </div>
                     </div>
                 </div>
@@ -194,12 +186,12 @@
                         <div style="font-family: 'Fira Code', monospace; font-size: 0.65rem; color: rgba(255,100,0,0.5); margin-top: 4px; text-align: center;">second wall</div>
                     </div>
                     <div style="padding: 28px 32px; background: rgba(255,255,255,0.01);">
-                        <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 10px; font-family: 'Fira Code', monospace;">Pyppeteer Migration</div>
-                        <p style="font-size: 0.9rem; color: var(--text-muted, #999); line-height: 1.75; margin: 0 0 16px;">Replaced Selenium with Pyppeteer — headless Chromium with a smaller footprint. Extended the ceiling to ~20 accounts. But the core architecture still required one live browser context per account. Same fundamental constraint, slightly higher limit.</p>
+                        <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 10px; font-family: 'Fira Code', monospace;">Playwright + OTP Handling</div>
+                        <p style="font-size: 0.9rem; color: var(--text-muted, #999); line-height: 1.75; margin: 0 0 16px;">Replaced Pyppeteer with Playwright — actively maintained, no memory leak. Platform added two-factor auth. Bot detects the OTP screen, asks the account owner via Telegram, polls for their reply, and types the code character-by-character (required because React's field validators need individual keystrokes). Persistent contexts still accumulate memory over long runtimes.</p>
                         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,100,0,0.25); border-radius: 4px; color: rgba(255,100,0,0.7);">Pyppeteer</span>
-                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">Headless Chromium</span>
-                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,50,50,0.2); border-radius: 4px; color: rgba(255,80,80,0.6);">⚠ fails at 20+</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,100,0,0.25); border-radius: 4px; color: rgba(255,100,0,0.7);">Playwright</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">OTP via Telegram</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,50,50,0.2); border-radius: 4px; color: rgba(255,80,80,0.6);">⚠ persistent contexts still leak</span>
                         </div>
                     </div>
                 </div>
@@ -213,22 +205,22 @@
                     </div>
                     <div style="padding: 32px 32px; background: rgba(0,255,136,0.02);">
                         <div style="font-size: 1.05rem; font-weight: 600; color: var(--text, #f0f0f0); margin-bottom: 12px; font-family: 'Fira Code', monospace;">Cookie Rotation Architecture</div>
-                        <p style="font-size: 0.9rem; color: var(--text-muted, #bbb); line-height: 1.75; margin: 0 0 16px;">The key insight: the 10-15 second wait between refreshes is dead time. A browser instance sitting idle burns memory for nothing. Eliminated the need for persistent browser contexts entirely.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted, #bbb); line-height: 1.75; margin: 0 0 16px;">The key insight: the 20-second wait between page reloads is dead time. A browser context sitting idle burns ~100MB for nothing. Eliminated persistent contexts entirely by saving session state to disk and opening short-lived contexts only when actively checking.</p>
                         <div style="background: rgba(0,0,0,0.25); border: 1px solid rgba(0,255,136,0.15); border-radius: 8px; padding: 16px 20px; margin-bottom: 16px; font-family: 'Fira Code', monospace; font-size: 0.8rem; line-height: 1.9; color: rgba(255,255,255,0.65);">
                             <span style="color: #00ff88;">01</span> — each account logs in once, saves session cookie to disk<br>
-                            <span style="color: #00ff88;">02</span> — single loop: load cookie → check → alert if hit → drop cookie → next account<br>
-                            <span style="color: #00ff88;">03</span> — idle wait time reused as switch time across all 150 accounts<br>
-                            <span style="color: #00ff88;">04</span> — cookie validation failure triggers auto re-login and cookie refresh
+                            <span style="color: #00ff88;">02</span> — per cycle: load cookie → open fresh context → check → close context<br>
+                            <span style="color: #00ff88;">03</span> — cooldown between cycles: no context open, zero memory held<br>
+                            <span style="color: #00ff88;">04</span> — dead cookie detected → auto re-login → fresh cookie saved → continues
                         </div>
                         <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px; padding: 12px 16px; background: rgba(0,255,136,0.06); border-radius: 8px; border: 1px solid rgba(0,255,136,0.15);">
                             <div style="font-family: 'Fira Code', monospace; font-size: 1.6rem; font-weight: 700; color: #00ff88;">150</div>
-                            <div style="font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.5;">accounts handled in<br><strong style="color: rgba(255,255,255,0.8);">a single instance</strong> with zero memory blowup</div>
+                            <div style="font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.5;">accounts handled in<br><strong style="color: rgba(255,255,255,0.8);">a single server instance</strong> with flat memory usage</div>
                         </div>
                         <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.3); border-radius: 4px; color: rgba(0,255,136,0.8);">Cookie Pooling</span>
-                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.3); border-radius: 4px; color: rgba(0,255,136,0.8);">Session Management</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.3); border-radius: 4px; color: rgba(0,255,136,0.8);">Cookie Rotation</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.3); border-radius: 4px; color: rgba(0,255,136,0.8);">Session Persistence</span>
                             <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.3); border-radius: 4px; color: rgba(0,255,136,0.8);">Auto-recovery</span>
-                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: rgba(255,255,255,0.4);">AWS</span>
+                            <span style="font-family: 'Fira Code', monospace; font-size: 0.7rem; padding: 3px 10px; border: 1px solid rgba(0,255,136,0.3); border-radius: 4px; color: rgba(0,255,136,0.8);">Playwright</span>
                         </div>
                     </div>
                 </div>
